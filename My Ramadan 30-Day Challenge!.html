@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)file:///C:/Users/Lenovo/Downloads/ramadan-checklist.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Ramadan 30-Day Challenge!</title>
+<link href="./My Ramadan 30-Day Challenge!_files/css2" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #F5A623;
+    --teal: #00B4D8;
+    --purple: #7B2FBE;
+    --pink: #FF6B9D;
+    --green: #2DC653;
+    --cream: #FFF8ED;
+    --dark: #1A1035;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0d0628 0%, #1a0a4a 40%, #0a2a5c 100%);
+    min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
+    padding: 30px 20px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Stars background */
+  body::before {
+    content: '✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦ ✧ ✦';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    color: rgba(255,255,255,0.08);
+    font-size: 18px;
+    line-height: 40px;
+    word-break: break-all;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .poster {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: floatIn 0.8s ease;
+  }
+
+  .moon-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 36px;
+    margin-bottom: 10px;
+    animation: sway 4s ease-in-out infinite;
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(42px, 8vw, 72px);
+    color: var(--gold);
+    text-shadow: 3px 3px 0 #c47a00, 0 0 30px rgba(245,166,35,0.5);
+    line-height: 1;
+    letter-spacing: 2px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    color: #c8b8ff;
+    font-weight: 700;
+    margin-top: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .arabic {
+    font-size: 28px;
+    color: rgba(245,166,35,0.8);
+    margin-top: 5px;
+  }
+
+  @keyframes floatIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* GRID */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  .day-card {
+    background: rgba(255,255,255,0.07);
+    border: 2px solid rgba(255,255,255,0.15);
+    border-radius: 18px;
+    padding: 12px 10px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: popIn 0.5s ease both;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .day-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .day-card:hover::before { opacity: 1; }
+  .day-card:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+
+  /* Color variants for cards */
+  .day-card:nth-child(6n+1) { border-color: rgba(245,166,35,0.5); }
+  .day-card:nth-child(6n+2) { border-color: rgba(0,180,216,0.5); }
+  .day-card:nth-child(6n+3) { border-color: rgba(123,47,190,0.5); }
+  .day-card:nth-child(6n+4) { border-color: rgba(255,107,157,0.5); }
+  .day-card:nth-child(6n+5) { border-color: rgba(45,198,83,0.5); }
+  .day-card:nth-child(6n+6) { border-color: rgba(0,180,216,0.5); }
+
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .day-num {
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .day-label {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 8px;
+  }
+
+  .task-emoji {
+    font-size: 26px;
+    display: block;
+    margin-bottom: 4px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  }
+
+  .task-text {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e8d8ff;
+    line-height: 1.3;
+  }
+
+  .checkbox {
+    width: 22px;
+    height: 22px;
+    border: 2.5px solid rgba(255,255,255,0.3);
+    border-radius: 6px;
+    margin: 8px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.2s;
+    background: rgba(255,255,255,0.05);
+  }
+
+  .day-card:hover .checkbox {
+    border-color: var(--gold);
+    background: rgba(245,166,35,0.15);
+  }
+
+  /* FOOTER BANNER */
+  .footer-banner {
+    background: linear-gradient(90deg, var(--purple), var(--teal), var(--purple));
+    background-size: 200%;
+    animation: shimmer 4s linear infinite;
+    border-radius: 20px;
+    padding: 20px 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  @keyframes shimmer {
+    from { background-position: 0% center; }
+    to { background-position: 200% center; }
+  }
+
+  .footer-banner h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 28px;
+    color: white;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+    margin-bottom: 8px;
+  }
+
+  .dua-text {
+    color: rgba(255,255,255,0.9);
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  /* Legend */
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .legend-item {
+    background: rgba(255,255,255,0.07);
+    border-radius: 30px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #c8b8ff;
+    border: 1.5px solid rgba(255,255,255,0.15);
+  }
+
+  .name-line {
+    text-align: center;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    border: 2px dashed rgba(245,166,35,0.4);
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .legend { gap: 10px; }
+  }
+  @media (max-width: 400px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <div class="header">
+    <div class="moon-strip">🌙 ⭐ 🌙 ⭐ 🌙</div>
+    <h1>MY RAMADAN CHALLENGE</h1>
+    <div class="subtitle">30 Days of Good Deeds</div>
+    <div class="arabic">رمضان كريم</div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item">📖 Quran</div>
+    <div class="legend-item">🤲 Dua &amp; Prayer</div>
+    <div class="legend-item">💛 Kindness</div>
+    <div class="legend-item">✅ Check it off!</div>
+  </div>
+
+  <div class="grid" id="grid">
+    <div class="day-card" style="animation-delay:0ms" onclick="toggleCheck(this)">
+      <div class="day-num">1</div>
+      <div class="day-label">Day 1</div>
+      <span class="task-emoji">📖</span>
+      <div class="task-text">Read 1 page of Quran</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:40ms" onclick="toggleCheck(this)">
+      <div class="day-num">2</div>
+      <div class="day-label">Day 2</div>
+      <span class="task-emoji">🌅</span>
+      <div class="task-text">Wake up for Suhoor</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:80ms" onclick="toggleCheck(this)">
+      <div class="day-num">3</div>
+      <div class="day-label">Day 3</div>
+      <span class="task-emoji">🙏</span>
+      <div class="task-text">Pray all 5 prayers today</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:120ms" onclick="toggleCheck(this)">
+      <div class="day-num">4</div>
+      <div class="day-label">Day 4</div>
+      <span class="task-emoji">💛</span>
+      <div class="task-text">Say kind words to 3 people</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:160ms" onclick="toggleCheck(this)">
+      <div class="day-num">5</div>
+      <div class="day-label">Day 5</div>
+      <span class="task-emoji">🌙</span>
+      <div class="task-text">Pray Taraweeh tonight</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:200ms" onclick="toggleCheck(this)">
+      <div class="day-num">6</div>
+      <div class="day-label">Day 6</div>
+      <span class="task-emoji">🫙</span>
+      <div class="task-text">Put money in a sadaqah jar</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:240ms" onclick="toggleCheck(this)">
+      <div class="day-num">7</div>
+      <div class="day-label">Day 7</div>
+      <span class="task-emoji">📖</span>
+      <div class="task-text">Read Surah Al-Fatiha</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:280ms" onclick="toggleCheck(this)">
+      <div class="day-num">8</div>
+      <div class="day-label">Day 8</div>
+      <span class="task-emoji">🤲</span>
+      <div class="task-text">Make dua after Iftar</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:320ms" onclick="toggleCheck(this)">
+      <div class="day-num">9</div>
+      <div class="day-label">Day 9</div>
+      <span class="task-emoji">🧹</span>
+      <div class="task-text">Help clean the house</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:360ms" onclick="toggleCheck(this)">
+      <div class="day-num">10</div>
+      <div class="day-label">Day 10</div>
+      <span class="task-emoji">🌙</span>
+      <div class="task-text">Pray Taraweeh + Witr</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:400ms" onclick="toggleCheck(this)">
+      <div class="day-num">11</div>
+      <div class="day-label">Day 11</div>
+      <span class="task-emoji">📖</span>
+      <div class="task-text">Read Quran for 10 mins</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:440ms" onclick="toggleCheck(this)">
+      <div class="day-num">12</div>
+      <div class="day-label">Day 12</div>
+      <span class="task-emoji">🍎</span>
+      <div class="task-text">Share food with a neighbor</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:480ms" onclick="toggleCheck(this)">
+      <div class="day-num">13</div>
+      <div class="day-label">Day 13</div>
+      <span class="task-emoji">✉️</span>
+      <div class="task-text">Write a Ramadan card for someone</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:520ms" onclick="toggleCheck(this)">
+      <div class="day-num">14</div>
+      <div class="day-label">Day 14</div>
+      <span class="task-emoji">🤲</span>
+      <div class="task-text">Learn a new dua by heart</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:560ms" onclick="toggleCheck(this)">
+      <div class="day-num">15</div>
+      <div class="day-label">Day 15</div>
+      <span class="task-emoji">🌙</span>
+      <div class="task-text">Pray Taraweeh with family</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:600ms" onclick="toggleCheck(this)">
+      <div class="day-num">16</div>
+      <div class="day-label">Day 16</div>
+      <span class="task-emoji">💰</span>
+      <div class="task-text">Give sadaqah — any amount!</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:640ms" onclick="toggleCheck(this)">
+      <div class="day-num">17</div>
+      <div class="day-label">Day 17</div>
+      <span class="task-emoji">📖</span>
+      <div class="task-text">Listen to Quran recitation</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:680ms" onclick="toggleCheck(this)">
+      <div class="day-num">18</div>
+      <div class="day-label">Day 18</div>
+      <span class="task-emoji">😊</span>
+      <div class="task-text">Smile at 5 people today</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:720ms" onclick="toggleCheck(this)">
+      <div class="day-num">19</div>
+      <div class="day-label">Day 19</div>
+      <span class="task-emoji">🙏</span>
+      <div class="task-text">Pray all Sunnah prayers too</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:760ms" onclick="toggleCheck(this)">
+      <div class="day-num">20</div>
+      <div class="day-label">Day 20</div>
+      <span class="task-emoji">🌙</span>
+      <div class="task-text">Make extra dua tonight</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:800ms" onclick="toggleCheck(this)">
+      <div class="day-num">21</div>
+      <div class="day-label">Day 21</div>
+      <span class="task-emoji">📖</span>
+      <div class="task-text">Read one page of Quran out loud</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay: 840ms; background: rgba(45, 198, 83, 0.1);" onclick="toggleCheck(this)">
+      <div class="day-num">22</div>
+      <div class="day-label">Day 22</div>
+      <span class="task-emoji">💛</span>
+      <div class="task-text">Say JazakAllah Khayran 3x</div>
+      <div class="checkbox" aria-label="complete task" style="background: rgba(45, 198, 83, 0.3); border-color: rgb(45, 198, 83); color: rgb(45, 198, 83);">✓</div>
+    </div>
+    <div class="day-card" style="animation-delay: 880ms; background: rgba(45, 198, 83, 0.1);" onclick="toggleCheck(this)">
+      <div class="day-num">23</div>
+      <div class="day-label">Day 23</div>
+      <span class="task-emoji">🫶</span>
+      <div class="task-text">Hug someone you love</div>
+      <div class="checkbox" aria-label="complete task" style="background: rgba(45, 198, 83, 0.3); border-color: rgb(45, 198, 83); color: rgb(45, 198, 83);">✓</div>
+    </div>
+    <div class="day-card" style="animation-delay: 920ms; background: rgba(45, 198, 83, 0.1);" onclick="toggleCheck(this)">
+      <div class="day-num">24</div>
+      <div class="day-label">Day 24</div>
+      <span class="task-emoji">🤲</span>
+      <div class="task-text">Do dhikr after every salah</div>
+      <div class="checkbox" aria-label="complete task" style="background: rgba(45, 198, 83, 0.3); border-color: rgb(45, 198, 83); color: rgb(45, 198, 83);">✓</div>
+    </div>
+    <div class="day-card" style="animation-delay: 960ms; background: rgba(45, 198, 83, 0.1);" onclick="toggleCheck(this)">
+      <div class="day-num">25</div>
+      <div class="day-label">Day 25</div>
+      <span class="task-emoji">🌙</span>
+      <div class="task-text">Pray Tahajjud tonight</div>
+      <div class="checkbox" aria-label="complete task" style="background: rgba(45, 198, 83, 0.3); border-color: rgb(45, 198, 83); color: rgb(45, 198, 83);">✓</div>
+    </div>
+    <div class="day-card" style="animation-delay:1000ms" onclick="toggleCheck(this)">
+      <div class="day-num">26</div>
+      <div class="day-label">Day 26</div>
+      <span class="task-emoji">📖</span>
+      <div class="task-text">Read Surah Al-Ikhlas 3x</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:1040ms" onclick="toggleCheck(this)">
+      <div class="day-num">27</div>
+      <div class="day-label">Day 27</div>
+      <span class="task-emoji">🎁</span>
+      <div class="task-text">Give a gift to make someone smile</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:1080ms" onclick="toggleCheck(this)">
+      <div class="day-num">28</div>
+      <div class="day-label">Day 28</div>
+      <span class="task-emoji">💰</span>
+      <div class="task-text">Help collect Zakat al-Fitr</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:1120ms" onclick="toggleCheck(this)">
+      <div class="day-num">29</div>
+      <div class="day-label">Day 29</div>
+      <span class="task-emoji">🤲</span>
+      <div class="task-text">Spend last night in dua &amp; dhikr</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>
+    <div class="day-card" style="animation-delay:1160ms" onclick="toggleCheck(this)">
+      <div class="day-num">30</div>
+      <div class="day-label">Day 30</div>
+      <span class="task-emoji">🌟</span>
+      <div class="task-text">Pray Eid prayer — Eid Mubarak! 🎉</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div></div>
+
+  <div class="footer-banner">
+    <h2>🌟 You Are Amazing! Ramadan Mubarak! 🌟</h2>
+    <div class="dua-text">"Whoever fasts Ramadan out of faith and hoping for reward, their past sins are forgiven." — Prophet Muhammad ﷺ</div>
+  </div>
+
+  <div class="name-line">✏️ &nbsp; MY NAME: _________________________ &nbsp; ✏️</div>
+
+</div>
+
+<script>
+const tasks = [
+  { emoji: "📖", text: "Read 1 page of Quran" },
+  { emoji: "🌅", text: "Wake up for Suhoor" },
+  { emoji: "🙏", text: "Pray all 5 prayers today" },
+  { emoji: "💛", text: "Say kind words to 3 people" },
+  { emoji: "🌙", text: "Pray Taraweeh tonight" },
+  { emoji: "🫙", text: "Put money in a sadaqah jar" },
+  { emoji: "📖", text: "Read Surah Al-Fatiha" },
+  { emoji: "🤲", text: "Make dua after Iftar" },
+  { emoji: "🧹", text: "Help clean the house" },
+  { emoji: "🌙", text: "Pray Taraweeh + Witr" },
+  { emoji: "📖", text: "Read Quran for 10 mins" },
+  { emoji: "🍎", text: "Share food with a neighbor" },
+  { emoji: "✉️", text: "Write a Ramadan card for someone" },
+  { emoji: "🤲", text: "Learn a new dua by heart" },
+  { emoji: "🌙", text: "Pray Taraweeh with family" },
+  { emoji: "💰", text: "Give sadaqah — any amount!" },
+  { emoji: "📖", text: "Listen to Quran recitation" },
+  { emoji: "😊", text: "Smile at 5 people today" },
+  { emoji: "🙏", text: "Pray all Sunnah prayers too" },
+  { emoji: "🌙", text: "Make extra dua tonight" },
+  { emoji: "📖", text: "Read one page of Quran out loud" },
+  { emoji: "💛", text: "Say JazakAllah Khayran 3x" },
+  { emoji: "🫶", text: "Hug someone you love" },
+  { emoji: "🤲", text: "Do dhikr after every salah" },
+  { emoji: "🌙", text: "Pray Tahajjud tonight" },
+  { emoji: "📖", text: "Read Surah Al-Ikhlas 3x" },
+  { emoji: "🎁", text: "Give a gift to make someone smile" },
+  { emoji: "💰", text: "Help collect Zakat al-Fitr" },
+  { emoji: "🤲", text: "Spend last night in dua & dhikr" },
+  { emoji: "🌟", text: "Pray Eid prayer — Eid Mubarak! 🎉" },
+];
+
+const grid = document.getElementById('grid');
+tasks.forEach((task, i) => {
+  const delay = (i * 40) + 'ms';
+  grid.innerHTML += `
+    <div class="day-card" style="animation-delay:${delay}" onclick="toggleCheck(this)">
+      <div class="day-num">${i + 1}</div>
+      <div class="day-label">Day ${i + 1}</div>
+      <span class="task-emoji">${task.emoji}</span>
+      <div class="task-text">${task.text}</div>
+      <div class="checkbox" aria-label="complete task"></div>
+    </div>`;
+});
+
+function toggleCheck(card) {
+  const box = card.querySelector('.checkbox');
+  if (box.textContent === '✓') {
+    box.textContent = '';
+    box.style.background = 'rgba(255,255,255,0.05)';
+    box.style.borderColor = 'rgba(255,255,255,0.3)';
+    card.style.background = 'rgba(255,255,255,0.07)';
+  } else {
+    box.textContent = '✓';
+    box.style.background = 'rgba(45,198,83,0.3)';
+    box.style.borderColor = '#2DC653';
+    box.style.color = '#2DC653';
+    card.style.background = 'rgba(45,198,83,0.1)';
+  }
+}
+</script>
+
+
+</body></html>
